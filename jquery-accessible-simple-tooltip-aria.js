@@ -1,10 +1,17 @@
-(function() {
+;(function(factory) {
+    'use strict';
+    if (typeof define === 'function' && define.amd) {
+        define(['jquery'], factory);
+    } else if (jQuery && !jQuery.fn.hoverIntent) {
+        factory(jQuery);
+    }
+})(function($) {
 
     'use strict';
 
     /*
      * jQuery accessible simple (non-modal) tooltip window, using ARIA
-     * @version v2.2.0 
+     * @version v2.2.0
      * Website: https://a11y.nicolas-hoffmann.net/simple-tooltip/
      * License MIT: https://github.com/nico3333fr/jquery-accessible-simple-tooltip-aria/blob/master/LICENSE
      */
@@ -98,5 +105,4 @@
                 }
             });
     });
-
-})();
+});
